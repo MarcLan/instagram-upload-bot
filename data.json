@@ -1,6 +1,5 @@
 {
-    "png_location": "C:\\code\\content\\images\\*.png",
-    "jpg_locaiton": "C:\\code\\content\\images\\*.jpg",
+    "photo_location": "C:\\code\\content\\images\\",
     "username": "ai_vanvan",
     "password": "Ly67142325#",
     "caption": ""

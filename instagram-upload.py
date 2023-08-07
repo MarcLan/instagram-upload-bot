@@ -6,13 +6,15 @@ import glob
 import time
 import json
 
+print(str.strftime("%Y-%m-%d"))
+
 # Read data.json
 with open("data.json") as file:
 	data = json.load(file)
 
 # Convert .png files to .jpg files, because only .jpg files can be uploaded
 counter = 0
-png_names = glob.glob("C:\\code\\content\\images\\*.png")
+png_names = glob.glob(data["photo_location"] + "*.png")
 for name in png_names:
     counter = counter + 1
     images = Image.open(name)
