@@ -6,8 +6,6 @@ import glob
 import time
 import json
 
-print(str.strftime("%Y-%m-%d"))
-
 # Read data.json
 with open("data.json") as file:
 	data = json.load(file)
@@ -19,18 +17,15 @@ for name in png_names:
     counter = counter + 1
     images = Image.open(name)
     #print(images)
-    images.save('C:\\code\\content\\images\\' + str(time.strftime("%Y-%m-%d-")) + str(counter) + '.jpg')
+    jpg_names = images.save('C:\\code\\content\\images\\' + str(time.strftime("%Y-%m-%d"))+ "-" + str(counter) + '.jpg')
 jpg_names = glob.glob('C:\\code\\content\\images\\*.jpg')
 #print(jpg_names)
 
 # Login with session
 # Enter username and password
-username = "ai_vanvan"
-password = 'Ly67142325#'
-
 cl = Client()
 cl.delay_range = [1, 3]
-cl.login(username, password)
+cl.login(data["username"], data["password"])
 cl.dump_settings("session.json")
 cl.get_timeline_feed()
 
